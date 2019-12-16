@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "",
+    "appService.defaultWebAppToDeploy": "/subscriptions/72290a5e-e0d6-4345-8500-545f88bbdba1/resourceGroups/uni-resources-container/providers/Microsoft.Web/sites/uni-api"
+}

@@ -1,0 +1,49 @@
+﻿@model api_app.Controllers.ViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Добро пожаловать в Factorial 3000!</h1>
+    
+    <table style="width:100%">
+        <tr>
+            <th>Номер операции</th>
+            <th>Число</th>
+            <th>Факториал числа</th>
+            <th>Статус выполнения</th>
+        </tr>
+
+        @{foreach(Item item in Model.Items)
+        {
+            <tr>
+                @{
+                    if (item.Completed) 
+                    {
+                        <td>@item.Id</td>
+                        <td>@item.Input</td>
+                        <td>@item.Output</td>
+                        <td>Готово</td>
+                    }
+                    else 
+                    {
+                        <td>@item.Id</td>
+                        <td>@item.Input</td>
+                        <td>---</td>
+                        <td>В процессе</td>
+                    }
+                }
+            </tr>
+        }}
+    </table>
+
+    @using ( Html.BeginForm() )
+    {
+        <div>
+            @Html.LabelFor(m => m.InputValue)
+            @Html.TextBoxFor(m => m.InputValue)
+        </div>
+
+        <input type="submit" value="Посчитать"/>
+    }
+</div>
